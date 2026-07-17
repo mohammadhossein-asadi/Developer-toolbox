@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setCss(".box {\n  width: 150px; height: 150px;\n  background: linear-gradient(135deg, #667eea, #764ba2);\n  border-radius: 16px;\n  display: flex; align-items: center; justify-content: center;\n  color: white; font-weight: bold;\n  transition: transform 0.3s;\n  cursor: pointer;\n}\n.box:hover { transform: translateY(-8px) scale(1.05); }")}>Load Demo</Button></div>
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -35,7 +34,6 @@ export default function CssPlaygroundPage() {
   return (
     <div>
       <ToolPageHeader name="CSS Playground" description="Experiment with CSS in real-time with live preview" icon="Paintbrush" slug="css-playground" category="design" copyText={css} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setCss(".box {\n  width: 150px; height: 150px;\n  background: linear-gradient(135deg, #667eea, #764ba2);\n  border-radius: 16px;\n  display: flex; align-items: center; justify-content: center;\n  color: white; font-weight: bold;\n  transition: transform 0.3s;\n  cursor: pointer;\n}\n.box:hover { transform: translateY(-8px) scale(1.05); }")}>Load Demo</Button></div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="space-y-3">
           <div className="flex items-center gap-2">

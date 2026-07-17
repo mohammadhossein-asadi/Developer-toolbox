@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setKeySize(2048); setPublicKey(""); setPrivateKey(""); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -38,7 +37,7 @@ export default function RsaKeygenPage() {
   return (
     <div>
       <ToolPageHeader name="RSA Key Pair Generator" description="Generate RSA Public/Private key pairs in PEM via Web Crypto API" icon="Lock" slug="rsa-keygen" category="generator" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setKeySize(2048); setPublicKey(""); setPrivateKey(""); }}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setKeySize(2048)}}>Load Demo</Button></div>
       <div className="space-y-4 max-w-2xl">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">

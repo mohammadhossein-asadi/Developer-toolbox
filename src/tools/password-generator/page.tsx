@@ -1,7 +1,6 @@
 "use client";
 import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setLength(16); setOpts({upper:true,lower:true,nums:true,syms:true}); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -37,7 +36,7 @@ export default function PasswordGeneratorPage() {
   return (
     <div>
       <ToolPageHeader name="Password Generator" description="Generate secure passwords with customizable options" icon="Shield" slug="password-generator" category="generator" copyText={password} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setLength(16); setOpts({upper:true,lower:true,nums:true,syms:true}); }}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setLength(16); setOpts({upper:true,lower:true,nums:true,syms:true})}}>Load Demo</Button></div>
       <div className="space-y-4 max-w-lg">
         <div className="rounded-lg border border-border bg-muted/50 p-4 font-mono text-lg break-all min-h-[3rem]">{password || "Click Generate"}</div>
         <div className="flex items-center justify-between"><span className="text-sm font-medium">Length: {length}</span><Badge variant={strength.color}>{strength.label}</Badge></div>

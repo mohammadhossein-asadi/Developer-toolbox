@@ -1,7 +1,6 @@
 "use client";
 import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setVersion("v4"); setCount(5); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,7 +23,7 @@ export default function UuidGeneratorPage() {
   return (
     <div>
       <ToolPageHeader name="UUID Generator" description="Generate UUIDs v1, v4, v6, and v7" icon="Fingerprint" slug="uuid-generator" category="generator" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setVersion("v4"); setCount(5); }}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setVersion('v4'); setCount(5)}}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="flex flex-wrap items-center gap-4">
           <div className="flex items-center gap-2">

@@ -1,7 +1,6 @@
 "use client";
 import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setInput("Hello, Developer Toolbox!")}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -41,7 +40,7 @@ export default function HashGeneratorPage() {
   return (
     <div>
       <ToolPageHeader name="Hash Generator" description="Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text" icon="Hash" slug="hash-generator" category="conversion" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setInput("Hello, Developer Toolbox!")}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setInput("Hello, Developer Toolbox!")}}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="space-y-2">
           <span className="text-sm font-medium">Input Text</span>

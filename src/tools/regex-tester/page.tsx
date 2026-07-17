@@ -1,7 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setPattern("\\b\\w+@\\w+\\.\\w+\\b"); setTestString("Contact us at hello@example.com"); }}>Load Demo</Button></div>
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -51,7 +50,6 @@ export default function RegexTesterPage() {
   return (
     <div>
       <ToolPageHeader name="Regex Tester" description="Test and debug regular expressions with live matching" icon="Regex" slug="regex-tester" category="code" copyText={pattern} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setPattern("\\b\\w+@\\w+\\.\\w+\\b"); setTestString("Contact us at hello@example.com"); }}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <span className="text-sm font-medium text-primary">/</span>

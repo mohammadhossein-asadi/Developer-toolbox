@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setFlexProps({direction:"row",wrap:"wrap",justify:"flex-start",align:"stretch",gap:"16"}); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,7 +23,6 @@ export default function CssFlexgridPage() {
   return (
     <div>
       <ToolPageHeader name="CSS Flexbox & Grid Generator" description="Visual interactive playground outputting CSS/Tailwind code" icon="LayoutGrid" slug="css-flexgrid" category="design" copyText={css} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setFlexProps({direction:"row",wrap:"wrap",justify:"flex-start",align:"stretch",gap:"16"}); }}>Load Demo</Button></div>
       <div className="space-y-4">
         <Tabs value={mode} onValueChange={(v) => setMode(v as typeof mode)}><TabsList><TabsTrigger value="flex">Flexbox</TabsTrigger><TabsTrigger value="grid">Grid</TabsTrigger></TabsList></Tabs>
         {mode === "flex" ? (

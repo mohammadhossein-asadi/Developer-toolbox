@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setTimestamp(Math.floor(Date.now() / 1000).toString())}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,7 +29,6 @@ export default function TimestampConverterPage() {
   return (
     <div>
       <ToolPageHeader name="Timestamp Converter" description="Convert between Unix timestamps and human dates" icon="Clock" slug="timestamp-converter" category="conversion" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setTimestamp(Math.floor(Date.now() / 1000).toString())}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="flex items-center gap-4">
           <Input type="number" placeholder="Unix timestamp..." value={timestamp} onChange={(e) => setTimestamp(e.target.value)} className="font-mono flex-1" />

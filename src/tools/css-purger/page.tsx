@@ -1,7 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setHtml(DEMO_HTML); setCss(DEMO_CSS); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -70,7 +69,7 @@ export default function CssPurgerPage() {
   return (
     <div>
       <ToolPageHeader name="CSS Purger & Class Analyzer" description="Scan HTML for unused CSS classes, show KB saved" icon="Scissors" slug="css-purger" category="design" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setHtml(DEMO_HTML); setCss(DEMO_CSS); }}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setHtml(DEMO_HTML); setCss(DEMO_CSS)}}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="space-y-2"><span className="text-sm font-medium">HTML</span><Textarea value={html} onChange={(e) => setHtml(e.target.value)} className="min-h-[200px] font-mono text-xs" /></div>

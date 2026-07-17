@@ -1,7 +1,6 @@
 "use client";
 import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setCode(defaultCode)}>Load Demo</Button></div>
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -73,7 +72,6 @@ export default function CodeAssistantPage() {
   return (
     <div>
       <ToolPageHeader name="Code Assistant" description="AI-powered code analysis and improvement suggestions" icon="Sparkles" slug="code-assistant" category="code" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setCode(defaultCode)}>Load Demo</Button></div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="space-y-3">
           <div className="flex items-center gap-2">

@@ -1,7 +1,6 @@
 "use client";
 import { useState, useMemo, useEffect, useRef } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setMarkdown(defaultMd)}>Load Demo</Button></div>
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -63,7 +62,6 @@ export default function MarkdownPreviewPage() {
   return (
     <div>
       <ToolPageHeader name="Markdown Preview" description="Live Markdown preview with GitHub styling" icon="FileText" slug="markdown-preview" category="text" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setMarkdown(defaultMd)}>Load Demo</Button></div>
       <div className="flex items-center gap-2 mb-4">
         <Tabs value={view} onValueChange={(v) => setView(v as typeof view)}><TabsList><TabsTrigger value="edit">Edit</TabsTrigger><TabsTrigger value="split">Split</TabsTrigger><TabsTrigger value="preview">Preview</TabsTrigger></TabsList></Tabs>
         <Button variant="outline" size="sm" onClick={downloadHtml} className="ml-auto"><Download className="h-4 w-4" /> Export HTML</Button>

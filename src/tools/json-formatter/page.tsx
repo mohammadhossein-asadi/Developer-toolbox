@@ -51,7 +51,6 @@ export default function JsonFormatterPage() {
   return (
     <div>
       <ToolPageHeader name="JSON Formatter & Validator" description="Format, minify, validate, and explore JSON data" icon="Braces" slug="json-formatter" category="code" copyText={output} />
-      <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={loadDemo}>Load Demo</Button></div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="space-y-3">
           <div className="flex items-center gap-2"><span className="text-sm font-medium">Input</span>{input && <Badge variant={isValid ? "default" : "destructive"}>{isValid ? "Valid" : "Invalid"}</Badge>}</div>

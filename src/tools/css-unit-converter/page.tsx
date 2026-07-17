@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setValue("16"); setFromUnit("px"); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -40,7 +39,7 @@ export default function CssUnitConverterPage() {
   return (
     <div>
       <ToolPageHeader name="CSS Unit Converter" description="Convert between px, rem, em, vh, vw, and %" icon="Ruler" slug="css-unit-converter" category="conversion" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setValue("16"); setFromUnit("px"); }}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setValue('16'); setFromUnit('px')}}>Load Demo</Button></div>
       <div className="space-y-4 max-w-lg">
         <div className="flex gap-3">
           <div className="flex-1 space-y-1"><Label>Value</Label><Input type="number" value={value} onChange={(e) => setValue(e.target.value)} className="font-mono" /></div>

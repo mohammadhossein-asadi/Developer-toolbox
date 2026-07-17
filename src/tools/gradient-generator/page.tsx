@@ -1,7 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setStops([{color:"#6366f1",position:0},{color:"#a855f7",position:100}]); setAngle(90); setType("linear"); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,7 +29,8 @@ export default function GradientGeneratorPage() {
   }, [type, angle, stops]);
 
   const svgCode = useMemo(() => {
-    if (type === "linear") { const rad = (angle - 90) * Math.PI / 180; const x1 = 50 - Math.cos(rad) * 50; const y1 = 50 - Math.sin(rad) * 50; const x2 = 50 + Math.cos(rad) * 50; const y2 = 50 + Math.sin(rad) * 50; return `<linearGradient id="grad" x1="${x1}%" y1="${y1}%" x2="${x2}%" y2="${y2}%">\n${stops.map((s) => `  <stop offset="${s.position}%" stop-color="${s.color}"/>`).join("\n")}\n</linearGradient>`; }
+    if (type === "linear") { const rad = (angle - 90) * Math.PI / 180; const x1 = 50 - Math.cos(rad) * 50; const y1 = 50 - Math.sin(rad) * 50; const x2 = 50 + Math.cos(rad) * 50; const y2 = 50 + Math.sin(rad) * 50; return `<linearGradient id="grad" x1="${x1}%" y1="${y1}%" x2="${x2}%" y2="${y2}%">\n${stops.map((s) => `  <stop offset="${s.position}%" stop-color="${s.color}"/>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setStops([{color:'#6366f1',position:0},{color:'#a855f7',position:100}])}}>Load Demo</Button></div>`).join("\n")}\n</linearGradient>`; }
     return `<radialGradient id="grad" cx="50%" cy="50%" r="50%">\n${stops.map((s) => `  <stop offset="${s.position}%" stop-color="${s.color}"/>`).join("\n")}\n</radialGradient>`;
   }, [type, angle, stops]);
 
@@ -41,7 +41,6 @@ export default function GradientGeneratorPage() {
   return (
     <div>
       <ToolPageHeader name="Gradient Generator" description="Create beautiful CSS gradients with live preview" icon="Rainbow" slug="gradient-generator" category="design" copyText={css} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setStops([{color:"#6366f1",position:0},{color:"#a855f7",position:100}]); setAngle(90); setType("linear"); }}>Load Demo</Button></div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div className="flex gap-2">

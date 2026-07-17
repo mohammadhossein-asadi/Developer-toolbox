@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setInput("255"); setFromBase(10); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,7 +28,7 @@ export default function NumberBaseConverterPage() {
   return (
     <div>
       <ToolPageHeader name="Number Base Converter" description="Convert between binary, octal, decimal, hex, and base-36" icon="Hash" slug="number-base-converter" category="conversion" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setInput("255"); setFromBase(10); }}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setInput('255'); setFromBase(10)}}>Load Demo</Button></div>
       <div className="space-y-4 max-w-lg">
         <div className="flex gap-3">
           <div className="flex-1 space-y-1"><Label>Value</Label><Input value={input} onChange={(e) => setInput(e.target.value)} className={`font-mono ${!isValid ? "border-destructive" : ""}`} placeholder="Enter number..." /></div>

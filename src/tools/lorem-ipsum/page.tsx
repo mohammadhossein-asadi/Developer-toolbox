@@ -1,7 +1,6 @@
 "use client";
 import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setParagraphs(3); setWordsPerPara(50); }}>Load Demo</Button></div>
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
@@ -36,7 +35,7 @@ export default function LoremIpsumPage() {
   return (
     <div>
       <ToolPageHeader name="Lorem Ipsum Generator" description="Generate placeholder text with paragraph/word counts" icon="FileText" slug="lorem-ipsum" category="text" copyText={output} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setParagraphs(3); setWordsPerPara(50); }}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setParagraphs(3); setWordsPerPara(50)}}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-4">
           <div className="space-y-1"><Label>Paragraphs</Label><Input type="number" min={1} max={20} value={paragraphs} onChange={(e) => setParagraphs(Math.min(20, Math.max(1, parseInt(e.target.value) || 1)))} className="w-20 h-8 text-sm" /></div>

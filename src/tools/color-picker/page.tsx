@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setHex("#6366f1")}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -43,7 +42,7 @@ export default function ColorPickerPage() {
   return (
     <div>
       <ToolPageHeader name="Color Picker" description="Pick colors, check contrast, and explore harmonies" icon="Palette" slug="color-picker" category="design" copyText={`--color-custom: ${hex};`} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setHex("#6366f1")}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setHex("#6366f1")}}>Load Demo</Button></div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="space-y-4">
           <div className="h-32 rounded-2xl border border-border" style={{ backgroundColor: hex }} />

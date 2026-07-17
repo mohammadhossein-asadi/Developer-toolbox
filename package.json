@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -23,7 +23,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
-    "cron-parser": "^5.6.2",
+    "cron-parser": "^4.9.0",
     "date-fns": "^4.4.0",
     "date-fns-tz": "^3.2.0",
     "dompurify": "^3.4.12",
@@ -31,7 +31,6 @@
     "highlight.js": "^11.11.1",
     "idb": "^8.0.3",
     "js-md5": "^0.8.3",
-    "lightningcss": "^1.32.0",
     "lucide-react": "^1.24.0",
     "marked": "^18.0.6",
     "qrcode": "^1.5.4",
@@ -53,7 +52,7 @@
     "@types/uuid": "^10.0.0",
     "@vitejs/plugin-react": "^4.7.0",
     "tailwindcss": "^4.3.3",
-    "typescript": "5.7",
+    "typescript": "~5.7.2",
     "vite": "^5.4.21"
   }
 }

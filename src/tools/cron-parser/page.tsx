@@ -1,7 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setFields({minute:"0",hour:"9",dayOfMonth:"*",month:"*",dayOfWeek:"*"}); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -41,7 +40,7 @@ export default function CronParserPage() {
   return (
     <div>
       <ToolPageHeader name="Cron Expression Parser" description="Build cron expressions and see human-readable descriptions" icon="Clock" slug="cron-parser" category="code" copyText={cron} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setFields({minute:"0",hour:"9",dayOfMonth:"*",month:"*",dayOfWeek:"*"}); }}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setFields({minute:'0',hour:'9',dayOfMonth:'*',month:'*',dayOfWeek:'*'})}}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
           {Object.entries(fields).map(([key, val]) => (

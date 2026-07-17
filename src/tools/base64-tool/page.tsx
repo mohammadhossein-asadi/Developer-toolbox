@@ -1,7 +1,6 @@
 "use client";
 import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setInput("Hello, Developer Toolbox!")}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -32,7 +31,7 @@ export default function Base64ToolPage() {
   return (
     <div>
       <ToolPageHeader name="Base64 Tool" description="Encode and decode Base64 strings and files" icon="Binary" slug="base64-tool" category="conversion" copyText={output} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setInput("Hello, Developer Toolbox!")}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setInput("Hello, Developer Toolbox!")}}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">

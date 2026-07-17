@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setInput("hello world example text")}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -33,7 +32,7 @@ export default function TextCaseConverterPage() {
   return (
     <div>
       <ToolPageHeader name="Text Case Converter" description="Convert text between camelCase, snake_case, kebab-case, and more" icon="CaseSensitive" slug="text-case-converter" category="text" copyText={output} />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setInput("hello world example text")}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setInput('hello world example text')}}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="space-y-2"><span className="text-sm font-medium">Input</span><Textarea value={input} onChange={(e) => setInput(e.target.value)} className="min-h-[100px] font-mono text-sm" /></div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">

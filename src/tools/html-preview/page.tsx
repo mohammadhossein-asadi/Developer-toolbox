@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setInput(defaultHtml)}>Load Demo</Button></div>
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -34,7 +33,6 @@ export default function HtmlPreviewPage() {
   return (
     <div>
       <ToolPageHeader name="HTML Preview" description="Live HTML/CSS/JS preview with responsive modes" icon="Code" slug="html-preview" category="code" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setInput(defaultHtml)}>Load Demo</Button></div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="space-y-3">
           <span className="text-sm font-medium">Code</span>

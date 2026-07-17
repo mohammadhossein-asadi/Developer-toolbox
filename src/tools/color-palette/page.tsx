@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setBaseColor("#6366f1"); setType("analogous"); setCount(5); }}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -47,7 +46,7 @@ export default function ColorPalettePage() {
   return (
     <div>
       <ToolPageHeader name="Color Palette Generator" description="Generate color palettes from a base color" icon="Palette" slug="color-palette" category="design" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => { setBaseColor("#6366f1"); setType("analogous"); setCount(5); }}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setBaseColor("#6366f1")}}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2"><Label>Base:</Label><input type="color" value={baseColor} onChange={(e) => setBaseColor(e.target.value)} className="h-8 w-8 rounded cursor-pointer" /><Input value={baseColor} onChange={(e) => setBaseColor(e.target.value)} className="w-24 h-8 text-xs font-mono" /></div>

@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE3MTYyMzkwMjJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")}>Load Demo</Button></div>
 import { CopyButton } from "@/components/shared/copy-button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -52,7 +51,6 @@ export default function JwtDecoderPage() {
   return (
     <div>
       <ToolPageHeader name="JWT Decoder" description="Decode and inspect JSON Web Tokens" icon="KeyRound" slug="jwt-decoder" category="code" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE3MTYyMzkwMjJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")}>Load Demo</Button></div>
       <div className="space-y-4">
         <div>
           <span className="text-sm font-medium mb-2 block">Paste JWT Token</span>

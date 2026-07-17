@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setText("https://developer-toolbox.dev")}>Load Demo</Button></div>
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -50,7 +49,7 @@ export default function QrGeneratorPage() {
   return (
     <div>
       <ToolPageHeader name="QR Code Generator" description="Generate QR codes for text, URLs, WiFi, and more" icon="QrCode" slug="qr-generator" category="generator" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => setText("https://developer-toolbox.dev")}>Load Demo</Button></div>
+        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setText('https://developer-toolbox.dev')}}>Load Demo</Button></div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="space-y-4">
           <Tabs value={type} onValueChange={(v) => setType(v as typeof type)}>
