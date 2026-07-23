@@ -1,5 +1,4 @@
-"use client";
-import { useState, useMemo } from "react";
+﻿import { useState, useMemo } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
@@ -49,7 +48,7 @@ export default function GradientGeneratorPage() {
           </div>
           <div className="flex items-center gap-2"><Label className="w-12 text-sm">Angle:</Label><input type="range" min={0} max={360} value={angle} onChange={(e) => setAngle(parseInt(e.target.value))} className="flex-1" /><Input type="number" value={angle} onChange={(e) => setAngle(parseInt(e.target.value) || 0)} className="w-16 h-8 text-xs" /><span className="text-xs text-muted-foreground">deg</span></div>
           <div className="space-y-2"><div className="flex items-center justify-between"><Label>Color Stops</Label><Button variant="outline" size="sm" onClick={addStop}>Add Stop</Button></div>
-            {stops.map((stop, i) => <div key={i} className="flex items-center gap-2"><input type="color" value={stop.color} onChange={(e) => { const n = [...stops]; n[i] = { ...n[i], color: e.target.value }; setStops(n); }} className="h-8 w-8 rounded cursor-pointer" /><Input value={stop.color} onChange={(e) => { const n = [...stops]; n[i] = { ...n[i], color: e.target.value }; setStops(n); }} className="h-8 text-xs font-mono w-24" /><input type="range" min={0} max={100} value={stop.position} onChange={(e) => { const n = [...stops]; n[i] = { ...n[i], position: parseInt(e.target.value) }; setStops(n); }} className="flex-1" /><span className="text-xs w-8 text-right">{stop.position}%</span><Button variant="ghost" size="sm" className="h-7 w-7 p-0" onClick={() => removeStop(i)} disabled={stops.length <= 2}>×</Button></div>)}
+            {stops.map((stop, i) => <div key={i} className="flex items-center gap-2"><input type="color" value={stop.color} onChange={(e) => { const n = [...stops]; n[i] = { ...n[i], color: e.target.value }; setStops(n); }} className="h-8 w-8 rounded cursor-pointer" /><Input value={stop.color} onChange={(e) => { const n = [...stops]; n[i] = { ...n[i], color: e.target.value }; setStops(n); }} className="h-8 text-xs font-mono w-24" /><input type="range" min={0} max={100} value={stop.position} onChange={(e) => { const n = [...stops]; n[i] = { ...n[i], position: parseInt(e.target.value) }; setStops(n); }} className="flex-1" /><span className="text-xs w-8 text-right">{stop.position}%</span><Button variant="ghost" size="sm" className="h-7 w-7 p-0" onClick={() => removeStop(i)} disabled={stops.length <= 2}>Ã—</Button></div>)}
           </div>
           <div className="space-y-2"><Label>Presets</Label><div className="grid grid-cols-3 gap-2">{presets.map((p) => <button key={p.n} className="h-10 rounded-lg border border-border cursor-pointer hover:scale-105 transition-transform" style={{ background: `linear-gradient(90deg, ${p.s.map((s) => `${s.color} ${s.position}%`).join(", ")})` }} onClick={() => setStops([...p.s])} title={p.n} />)}</div></div>
         </div>

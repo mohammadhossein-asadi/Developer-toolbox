@@ -1,5 +1,4 @@
-"use client";
-import { useState, useCallback } from "react";
+﻿import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
@@ -75,10 +74,10 @@ export default function EnvConverterPage() {
 
   return (
     <div>
-      <ToolPageHeader name=".env ↔ JSON Converter" description="Convert environment variables to nested JSON and back, flag syntax bugs" icon="FileKey" slug="env-converter" category="conversion" copyText={output} />
+      <ToolPageHeader name=".env â†” JSON Converter" description="Convert environment variables to nested JSON and back, flag syntax bugs" icon="FileKey" slug="env-converter" category="conversion" copyText={output} />
       <div className="space-y-4">
         <div className="flex items-center gap-2">
-          <Tabs value={mode} onValueChange={(v) => setMode(v as typeof mode)}><TabsList><TabsTrigger value="env2json">.env → JSON</TabsTrigger><TabsTrigger value="json2env">JSON → .env</TabsTrigger></TabsList></Tabs>
+          <Tabs value={mode} onValueChange={(v) => setMode(v as typeof mode)}><TabsList><TabsTrigger value="env2json">.env â†’ JSON</TabsTrigger><TabsTrigger value="json2env">JSON â†’ .env</TabsTrigger></TabsList></Tabs>
           <Button variant="outline" size="sm" onClick={loadDemo}>Load Demo</Button>
         </div>
         {errors.length > 0 && <div className="text-sm text-destructive p-2 rounded-lg bg-destructive/10">{errors.join("\n")}</div>}

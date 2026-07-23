@@ -1,5 +1,4 @@
-"use client";
-import { useState } from "react";
+﻿import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
@@ -48,7 +47,7 @@ export default function ColorPickerPage() {
           <div className="h-32 rounded-2xl border border-border" style={{ backgroundColor: hex }} />
           <div className="space-y-2"><Label>HEX</Label><div className="flex gap-2"><input type="color" value={hex} onChange={(e) => setHex(e.target.value)} className="h-10 w-10 rounded-lg cursor-pointer" /><Input value={hex} onChange={(e) => handleHex(e.target.value)} className="font-mono" /></div></div>
           <div className="space-y-2"><Label>RGB</Label><div className="grid grid-cols-3 gap-2">{(["r", "g", "b"] as const).map((ch) => <div key={ch} className="space-y-1"><span className="text-xs text-muted-foreground uppercase">{ch}</span><Input type="number" min={0} max={255} value={rgb[ch]} onChange={(e) => handleRgb(ch, parseInt(e.target.value) || 0)} className="h-8 text-xs" /></div>)}</div></div>
-          <div className="space-y-2"><Label>HSL</Label><div className="space-y-2">{(["h", "s", "l"] as const).map((ch) => <div key={ch} className="flex items-center gap-2"><span className="text-xs w-4">{ch}</span><input type="range" min={0} max={ch === "h" ? 360 : 100} value={hsl[ch]} onChange={(e) => handleHsl(ch, parseInt(e.target.value))} className="flex-1" /><span className="text-xs w-8 text-right">{hsl[ch]}{ch === "h" ? "°" : "%"}</span></div>)}</div></div>
+          <div className="space-y-2"><Label>HSL</Label><div className="space-y-2">{(["h", "s", "l"] as const).map((ch) => <div key={ch} className="flex items-center gap-2"><span className="text-xs w-4">{ch}</span><input type="range" min={0} max={ch === "h" ? 360 : 100} value={hsl[ch]} onChange={(e) => handleHsl(ch, parseInt(e.target.value))} className="flex-1" /><span className="text-xs w-8 text-right">{hsl[ch]}{ch === "h" ? "Â°" : "%"}</span></div>)}</div></div>
           <Button variant="outline" size="sm" className="w-full" onClick={async () => { if ("EyeDropper" in window) { const ed = new (window as any).EyeDropper(); const r = await ed.open(); setHex(r.sRGBHex); } }}><Pipette className="h-4 w-4" /> Eyedropper</Button>
         </div>
         <div className="space-y-4">

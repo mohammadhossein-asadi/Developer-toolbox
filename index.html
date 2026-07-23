@@ -1,11 +1,30 @@
-<!doctype html>
-<html lang="en" class="dark">
+﻿<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#863bff" />
     <meta name="description" content="Premium developer toolbox with JSON formatter, JWT decoder, QR generator, regex tester, and more. Fast, beautiful, offline-first." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Developer Toolbox - Premium Developer Utilities" />
+    <meta property="og:description" content="40+ developer tools that run 100% client-side. JSON formatter, JWT decoder, regex tester, hash generator, QR codes, and more." />
+    <meta property="og:site_name" content="Developer Toolbox" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Developer Toolbox - Premium Developer Utilities" />
+    <meta name="twitter:description" content="40+ developer tools that run 100% client-side. JSON formatter, JWT decoder, regex tester, hash generator, QR codes, and more." />
+    <link rel="canonical" href="https://developer-toolbox.dev" />
     <title>Developer Toolbox - Premium Developer Utilities</title>
+    <script>
+      (function() {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

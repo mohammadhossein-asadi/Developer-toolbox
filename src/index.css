@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 @theme {
   --color-background: oklch(0.145 0 0);
@@ -154,3 +154,20 @@ pre, code { font-family: var(--font-mono); }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: oklch(0.3 0 0); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: oklch(0.4 0 0); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .aurora-bg { animation: none; opacity: 0.1; }
+  .animate-gradient-text { animation: none; }
+  .animate-fade-in { opacity: 1; animation: none; }
+  .animate-float { animation: none; }
+  .animate-pulse-glow { animation: none; }
+  .animate-slide-up { opacity: 1; animation: none; }
+  .stagger > * { opacity: 1; animation: none; }
+}

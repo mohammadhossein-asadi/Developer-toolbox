@@ -1,5 +1,4 @@
-"use client";
-import { useState, useCallback } from "react";
+﻿import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";

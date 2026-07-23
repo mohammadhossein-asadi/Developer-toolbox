@@ -1,13 +1,9 @@
-"use client";
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Command } from "cmdk";
 import { useCommandPalette } from "@/lib/hooks/use-command-palette";
-import { tools } from "@/lib/constants";
-import * as Icons from "lucide-react";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getIcon(name: string) { const Icon = (Icons as any)[name]; return Icon || Icons.Code; }
+import { tools, getIcon } from "@/lib/constants";
+import { Home } from "lucide-react";
 
 export function CommandPalette() {
   const { isOpen, open, close } = useCommandPalette();
@@ -47,7 +43,7 @@ export function CommandPalette() {
           <Command.Separator className="my-2 h-px bg-border" />
           <Command.Group heading="Actions" className="px-2">
             <Command.Item onSelect={() => run(() => navigate("/"))} className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm cursor-pointer aria-selected:bg-accent">
-              <Icons.Home className="h-4 w-4 text-muted-foreground" /> Go to Dashboard
+              <Home className="h-4 w-4 text-muted-foreground" /> Go to Dashboard
             </Command.Item>
           </Command.Group>
         </Command.List>

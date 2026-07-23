@@ -1,12 +1,11 @@
-"use client";
-import { useState } from "react";
+﻿import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, Command, Sun, Moon, Home, Wand2, ArrowLeft } from "lucide-react";
+import { Search, Command, Sun, Moon, Home, Wand2, ArrowLeft, Menu } from "lucide-react";
 import { useCommandPalette } from "@/lib/hooks/use-command-palette";
 import { Button } from "@/components/ui/button";
 import { getToolBySlug } from "@/lib/constants";
 
-export function Header() {
+export function Header({ onMenuToggle }: { onMenuToggle?: () => void }) {
   const { open } = useCommandPalette();
   const location = useLocation();
   const isToolPage = location.pathname.startsWith("/tools/");
@@ -16,6 +15,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="flex h-14 items-center gap-4 px-4 md:px-6">
+        {/* Mobile menu button */}
+        {onMenuToggle && (
+          <button onClick={onMenuToggle} className="lg:hidden flex items-center justify-center h-9 w-9 rounded-lg hover:bg-muted transition-colors" aria-label="Open navigation menu">
+            <Menu className="h-5 w-5" />
+          </button>
+        )}
+
         {/* Left: Logo + Back button */}
         <div className="flex items-center gap-3 min-w-0">
           {isToolPage ? (
@@ -56,14 +62,20 @@ export function Header() {
 }
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof window !== "undefined") {
+      return (localStorage.getItem("theme") as "dark" | "light") || "dark";
+    }
+    return "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const toggle = () => {
-    const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    document.documentElement.setAttribute("data-theme", next);
-    if (next === "dark") document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
   return (

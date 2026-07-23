@@ -1,5 +1,4 @@
-"use client";
-import { useState } from "react";
+﻿import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";

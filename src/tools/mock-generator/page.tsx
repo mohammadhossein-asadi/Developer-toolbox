@@ -1,5 +1,4 @@
-"use client";
-import { useState } from "react";
+﻿import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
@@ -38,17 +37,22 @@ function generateFake(schema: Array<Record<string, unknown>>, count: number) {
   });
 }
 
+function escapeSqlString(v: unknown): string {
+  if (typeof v === "string") return `'${v.replace(/'/g, "''")}'`;
+  if (v === null || v === undefined) return "NULL";
+  if (typeof v === "boolean") return v ? "TRUE" : "FALSE";
+  return String(v);
+}
+
 export default function MockGeneratorPage() {
   const [schema, setSchema] = useState(DEMO_SCHEMA);
   const [count, setCount] = useState(10);
   const [format, setFormat] = useState<"json" | "csv" | "sql">("json");
   const [output, setOutput] = useState("");
-  const [table, setTable] = useState<Record<string, unknown>[]>([]);
 
   const generate = () => {
     const fields = JSON.parse(schema);
     const data = generateFake(fields, count);
-    setTable(data);
     if (format === "json") setOutput(JSON.stringify(data, null, 2));
     else if (format === "csv") {
       const headers = fields.map((f: Record<string, unknown>) => f.name).join(",");
@@ -57,7 +61,7 @@ export default function MockGeneratorPage() {
     } else {
       const tableName = "mock_data";
       const rows = data.map((row) => {
-        const vals = Object.values(row).map((v) => typeof v === "string" ? `'${v}'` : v).join(", ");
+        const vals = Object.values(row).map(escapeSqlString).join(", ");
         return `INSERT INTO ${tableName} (${Object.keys(row).join(", ")}) VALUES (${vals});`;
       }).join("\n");
       setOutput(rows);
@@ -76,7 +80,7 @@ export default function MockGeneratorPage() {
           <Button variant="outline" size="sm" onClick={loadDemo}>Load Demo</Button>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="space-y-2"><span className="text-sm font-medium">Schema (JSON Array)</span><Textarea value={schema} onChange={(e) => setSchema(e.target.value)} className="min-h-[250px] font-mono text-xs" /></div>
+          <div className="space-y-2"><label htmlFor="mock-schema" className="text-sm font-medium">Schema (JSON Array)</label><Textarea id="mock-schema" value={schema} onChange={(e) => setSchema(e.target.value)} className="min-h-[250px] font-mono text-xs" /></div>
           <div className="space-y-2"><div className="flex items-center justify-between"><span className="text-sm font-medium">Generated Output</span>{output && <CopyButton text={output} />}</div><pre className="min-h-[250px] rounded-lg border border-border bg-muted/50 p-4 overflow-auto text-xs font-mono whitespace-pre-wrap">{output || "Click Generate..."}</pre></div>
         </div>
         <Button onClick={generate} className="w-full"><Database className="h-4 w-4" /> Generate {count} Rows</Button>

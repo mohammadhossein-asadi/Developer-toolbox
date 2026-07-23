@@ -1,5 +1,4 @@
-"use client";
-import { useState, useCallback } from "react";
+﻿import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
@@ -40,11 +39,11 @@ export default function JsonCsvConverterPage() {
 
   return (
     <div>
-      <ToolPageHeader name="JSON ↔ CSV Converter" description="Convert between JSON arrays and CSV format" icon="ArrowLeftRight" slug="json-csv-converter" category="conversion" copyText={output} />
+      <ToolPageHeader name="JSON â†” CSV Converter" description="Convert between JSON arrays and CSV format" icon="ArrowLeftRight" slug="json-csv-converter" category="conversion" copyText={output} />
       <div className="space-y-4">
         <div className="flex items-center gap-4">
           <Tabs value={mode} onValueChange={(v) => setMode(v as typeof mode)}>
-            <TabsList><TabsTrigger value="json2csv">JSON → CSV</TabsTrigger><TabsTrigger value="csv2json">CSV → JSON</TabsTrigger></TabsList>
+            <TabsList><TabsTrigger value="json2csv">JSON â†’ CSV</TabsTrigger><TabsTrigger value="csv2json">CSV â†’ JSON</TabsTrigger></TabsList>
           </Tabs>
           <Button variant="outline" size="sm" onClick={() => setInput(DEMO)}>Load Demo</Button>
           <div className="flex items-center gap-2 ml-auto"><Label className="text-xs">Delimiter:</Label><Input value={delimiter} onChange={(e) => setDelimiter(e.target.value)} className="w-16 h-8 text-xs font-mono" /></div>

@@ -1,5 +1,4 @@
-"use client";
-import { useState } from "react";
+﻿import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Input } from "@/components/ui/input";

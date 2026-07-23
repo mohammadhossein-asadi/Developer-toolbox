@@ -1,5 +1,4 @@
-"use client";
-import { useState, useMemo } from "react";
+﻿import { useState, useMemo } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
@@ -74,7 +73,7 @@ export default function DiffCheckerPage() {
                   <span className="text-muted-foreground mr-2">{i + 1}</span>
                   {d.status === "removed" && <span className="text-red-400">- {d.lineA}</span>}
                   {d.status === "added" && <span className="text-green-400">+ {d.lineB}</span>}
-                  {d.status === "changed" && <span className="text-yellow-400">~ {d.lineA} → {d.lineB}</span>}
+                  {d.status === "changed" && <span className="text-yellow-400">~ {d.lineA} â†’ {d.lineB}</span>}
                   {d.status === "same" && <span>{d.lineA}</span>}
                 </div>
               )}

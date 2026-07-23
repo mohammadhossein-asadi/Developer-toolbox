@@ -1,5 +1,4 @@
-"use client";
-import { useState } from "react";
+﻿import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
@@ -88,7 +87,7 @@ export default function CborMsgpackPage() {
       <ToolPageHeader name="CBOR & MsgPack Translator" description="Convert binary serialization formats to/from JSON" icon="Binary" slug="cbor-msgpack" category="conversion" copyText={output} />
       <div className="space-y-4">
         <div className="flex items-center gap-2">
-          <Tabs value={mode} onValueChange={(v) => setMode(v as typeof mode)}><TabsList><TabsTrigger value="json2cbor">JSON → CBOR</TabsTrigger><TabsTrigger value="cbor2json">CBOR → JSON</TabsTrigger></TabsList></Tabs>
+          <Tabs value={mode} onValueChange={(v) => setMode(v as typeof mode)}><TabsList><TabsTrigger value="json2cbor">JSON â†’ CBOR</TabsTrigger><TabsTrigger value="cbor2json">CBOR â†’ JSON</TabsTrigger></TabsList></Tabs>
           <Button variant="outline" size="sm" onClick={() => setInput(DEMO)}>Load Demo</Button>
         </div>
         {error && <div className="text-sm text-destructive p-2 rounded-lg bg-destructive/10">{error}</div>}

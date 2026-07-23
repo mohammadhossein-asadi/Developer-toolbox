@@ -1,5 +1,4 @@
-"use client";
-import { useState } from "react";
+﻿import { useState } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
@@ -16,8 +15,8 @@ const INVISIBLE_CHARS: Record<string, string> = {
 };
 
 const HOMOGLYPHS: Record<string, string> = {
-  "а": "Cyrillic 'a' (U+0430)", "е": "Cyrillic 'e' (U+0435)", "о": "Cyrillic 'o' (U+043E)",
-  "р": "Cyrillic 'r' (U+0440)", "с": "Cyrillic 's' (U+0441)", "ᴀ": "Small Cap A (U+1D00)",
+  "Ð°": "Cyrillic 'a' (U+0430)", "Ðµ": "Cyrillic 'e' (U+0435)", "Ð¾": "Cyrillic 'o' (U+043E)",
+  "Ñ€": "Cyrillic 'r' (U+0440)", "Ñ": "Cyrillic 's' (U+0441)", "á´€": "Small Cap A (U+1D00)",
 };
 
 function inspect(text: string) {

@@ -1,4 +1,23 @@
-import type { ToolDef } from "@/types/tool";
+﻿import type { ToolDef } from "@/types/tool";
+import {
+  Braces, KeyRound, Binary, Fingerprint, QrCode, Regex, Palette, Rainbow,
+  Clock, FileText, Code, Paintbrush, Sparkles, Hash, Link as LinkIcon,
+  ArrowLeftRight, CaseSensitive, Globe, Ruler, Network, ShieldCheck,
+  Container, PenTool, Database, FileKey, ScanText, Lock, Table, Scissors,
+  Terminal, LayoutGrid, GitCompare, SwatchBook, Shield, Home,
+} from "lucide-react";
+
+export const ICON_MAP: Record<string, React.ElementType> = {
+  Braces, KeyRound, Binary, Fingerprint, QrCode, Regex, Palette, Rainbow,
+  Clock, FileText, Code, Paintbrush, Sparkles, Hash, Link: LinkIcon,
+  ArrowLeftRight, CaseSensitive, Globe, Ruler, Network, ShieldCheck,
+  Container, PenTool, Database, FileKey, ScanText, Lock, Table, Scissors,
+  Terminal, LayoutGrid, GitCompare, SwatchBook, Shield, Home,
+};
+
+export function getIcon(name: string): React.ElementType {
+  return ICON_MAP[name] || Code;
+}
 
 export const tools: ToolDef[] = [
   // === Category A: Common Tools ===
@@ -36,7 +55,7 @@ export const tools: ToolDef[] = [
   { slug: "gradient-generator", name: "Gradient Generator", description: "Create beautiful CSS gradients with live preview", icon: "Rainbow", category: "design", keywords: ["gradient", "linear", "radial", "conic", "css"] },
   { slug: "html-preview", name: "HTML Preview", description: "Live HTML/CSS/JS preview with responsive modes", icon: "Code", category: "code", keywords: ["html", "css", "javascript", "preview"] },
   { slug: "css-playground", name: "CSS Playground", description: "Experiment with CSS in real-time with live preview", icon: "Paintbrush", category: "design", keywords: ["css", "playground", "styles"] },
-  { slug: "code-assistant", name: "Code Assistant", description: "AI-powered code analysis and improvement suggestions", icon: "Sparkles", category: "code", keywords: ["ai", "code", "assist", "improve"] },
+  { slug: "code-assistant", name: "Code Assistant", description: "Static code analysis with improvement suggestions", icon: "Sparkles", category: "code", keywords: ["ai", "code", "assist", "improve"] },
   { slug: "lorem-ipsum", name: "Lorem Ipsum Generator", description: "Generate placeholder text with paragraph/word counts", icon: "FileText", category: "text", keywords: ["lorem", "ipsum", "placeholder"] },
   { slug: "json-csv-converter", name: "JSON ↔ CSV Converter", description: "Convert between JSON arrays and CSV format", icon: "ArrowLeftRight", category: "conversion", keywords: ["json", "csv", "convert"] },
   { slug: "password-generator", name: "Password Generator", description: "Generate secure passwords with customizable options", icon: "Shield", category: "generator", keywords: ["password", "secure", "random"] },
@@ -45,6 +64,7 @@ export const tools: ToolDef[] = [
   { slug: "color-palette", name: "Color Palette Generator", description: "Generate color palettes from a base color", icon: "SwatchBook", category: "design", keywords: ["color", "palette", "scheme"] },
   { slug: "css-unit-converter", name: "CSS Unit Converter", description: "Convert between px, rem, em, vh, vw, and %", icon: "Ruler", category: "conversion", keywords: ["css", "unit", "convert", "px", "rem"] },
   { slug: "number-base-converter", name: "Number Base Converter", description: "Convert between binary, octal, decimal, hex, and base-36", icon: "Hash", category: "conversion", keywords: ["number", "base", "binary", "hex"] },
+  { slug: "cron-parser", name: "Cron Expression Parser", description: "Build, validate, and understand cron expressions with human-readable descriptions", icon: "Clock", category: "code", keywords: ["cron", "schedule", "expression", "timer", "job"] },
 ];
 
 export const categories = [

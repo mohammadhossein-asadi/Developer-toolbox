@@ -1,25 +1,13 @@
-"use client";
-import { Link } from "react-router-dom";
-import { tools, categories } from "@/lib/constants";
+﻿import { Link } from "react-router-dom";
+import { tools, categories, getIcon } from "@/lib/constants";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useCommandPalette } from "@/lib/hooks/use-command-palette";
 import {
   Search, Command, Wand2, Zap, Shield, ArrowRight, Sparkles,
-  Code, FileText, Palette, ArrowLeftRight, Braces, KeyRound, Binary,
-  Fingerprint, QrCode, Regex, Rainbow, Clock, Paintbrush, Hash, Link as LinkIcon,
-  Globe, Ruler, Network, ShieldCheck, Container, PenTool, Database, FileKey,
-  ScanText, Lock, Table, Scissors, Terminal, LayoutGrid, GitCompare, CaseSensitive, SwatchBook,
+  Code, FileText, Palette, ArrowLeftRight,
 } from "lucide-react";
-import { useState, useEffect } from "react";
-
-const iconMap: Record<string, React.ElementType> = {
-  Braces, KeyRound, Binary, Fingerprint, QrCode, Regex, Palette, Rainbow,
-  Clock, FileText, Code, Paintbrush, Sparkles, Hash, Link: LinkIcon,
-  ArrowLeftRight, CaseSensitive, Globe, Ruler, Network, ShieldCheck,
-  Container, PenTool, Database, FileKey, ScanText, Lock, Table, Scissors,
-  Terminal, LayoutGrid, GitCompare, SwatchBook, Shield,
-};
+import { useState, useEffect, useMemo } from "react";
 
 const catMeta: Record<string, { icon: React.ElementType; color: string; bg: string }> = {
   code: { icon: Code, color: "text-blue-400", bg: "bg-blue-500/10" },
@@ -31,8 +19,6 @@ const catMeta: Record<string, { icon: React.ElementType; color: string; bg: stri
 
 const heroWords = ["Format", "Decode", "Generate", "Convert", "Transform", "Optimize"];
 
-function getIcon(name: string) { return iconMap[name] || Code; }
-
 export default function Dashboard() {
   const [search, setSearch] = useState("");
   const { open } = useCommandPalette();
@@ -42,13 +28,14 @@ export default function Dashboard() {
   useEffect(() => {
     const iv = setInterval(() => {
       setVisible(false);
-      setTimeout(() => { setHeroIdx((i) => (i + 1) % heroWords.length); setVisible(true); }, 300);
+      const timeout = setTimeout(() => { setHeroIdx((i) => (i + 1) % heroWords.length); setVisible(true); }, 300);
+      return () => clearTimeout(timeout);
     }, 2500);
     return () => clearInterval(iv);
   }, []);
 
-  const filtered = tools.filter((t) => t.name.toLowerCase().includes(search.toLowerCase()) || t.description.toLowerCase().includes(search.toLowerCase()) || t.keywords.some((k) => k.includes(search.toLowerCase())));
-  const grouped = categories.map((cat) => ({ ...cat, tools: filtered.filter((t) => t.category === cat.slug) })).filter((g) => g.tools.length > 0);
+  const filtered = useMemo(() => tools.filter((t) => t.name.toLowerCase().includes(search.toLowerCase()) || t.description.toLowerCase().includes(search.toLowerCase()) || t.keywords.some((k) => k.includes(search.toLowerCase()))), [search]);
+  const grouped = useMemo(() => categories.map((cat) => ({ ...cat, tools: filtered.filter((t) => t.category === cat.slug) })).filter((g) => g.tools.length > 0), [filtered]);
 
   return (
     <div className="min-h-screen">
@@ -98,6 +85,11 @@ export default function Dashboard() {
         <div className="relative mb-8">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input placeholder="Search 40+ developer tools..." value={search} onChange={(e) => setSearch(e.target.value)} className="pl-11 h-12 text-sm glass rounded-xl" />
+          {search && (
+            <button onClick={() => setSearch("")} className="absolute right-12 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors" aria-label="Clear search">
+              ✕
+            </button>
+          )}
           <button onClick={open} className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 text-[10px] text-muted-foreground hover:text-foreground transition-colors cursor-pointer border border-border rounded-md px-1.5 py-0.5">
             <Command className="h-2.5 w-2.5" />K
           </button>

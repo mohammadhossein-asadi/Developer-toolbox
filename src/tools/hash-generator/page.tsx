@@ -1,10 +1,8 @@
-"use client";
-import { useState, useCallback } from "react";
+﻿import { useState, useCallback } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { CopyButton } from "@/components/shared/copy-button";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import { Hash } from "lucide-react";
 import md5 from "js-md5";
 
@@ -40,16 +38,16 @@ export default function HashGeneratorPage() {
   return (
     <div>
       <ToolPageHeader name="Hash Generator" description="Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text" icon="Hash" slug="hash-generator" category="conversion" />
-        <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setInput("Hello, Developer Toolbox!")}}>Load Demo</Button></div>
+      <div className="flex gap-2 mb-4"><Button variant="outline" size="sm" onClick={() => {setInput("Hello, Developer Toolbox!")}}>Load Demo</Button></div>
       <div className="space-y-4">
         <div className="space-y-2">
-          <span className="text-sm font-medium">Input Text</span>
-          <Textarea value={input} onChange={(e) => setInput(e.target.value)} className="min-h-[120px] font-mono text-sm" />
+          <label htmlFor="hash-input" className="text-sm font-medium">Input Text</label>
+          <Textarea id="hash-input" value={input} onChange={(e) => setInput(e.target.value)} className="min-h-[120px] font-mono text-sm" />
         </div>
         <div className="flex flex-wrap gap-2">
           <span className="text-sm font-medium self-center">Algorithms:</span>
           {algorithms.map((a) => (
-            <Badge key={a.name} variant={active.includes(a.name) ? "default" : "outline"} className="cursor-pointer" onClick={() => toggle(a.name)}>{a.name}</Badge>
+            <Button key={a.name} variant={active.includes(a.name) ? "default" : "outline"} size="sm" onClick={() => toggle(a.name)} className="h-7 px-2 text-xs">{a.name}</Button>
           ))}
         </div>
         <Button onClick={generate} size="sm"><Hash className="h-4 w-4" /> Generate</Button>

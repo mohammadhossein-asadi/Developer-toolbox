@@ -1,5 +1,4 @@
-"use client";
-import { useState } from "react";
+﻿import { useState, useEffect } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { Button } from "@/components/ui/button";
 import { Globe, RefreshCw } from "lucide-react";
@@ -32,7 +31,7 @@ export default function IpLookupPage() {
 
   const refresh = () => { getLocalIp(); getPublicIp(); };
 
-  useState(() => { getLocalIp(); getPublicIp(); });
+  useEffect(() => { getLocalIp(); getPublicIp(); }, []);
 
   return (
     <div>

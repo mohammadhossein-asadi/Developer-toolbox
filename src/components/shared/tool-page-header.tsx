@@ -1,10 +1,6 @@
-"use client";
-import { CopyButton } from "./copy-button";
+﻿import { CopyButton } from "./copy-button";
 import { Badge } from "@/components/ui/badge";
-import * as Icons from "lucide-react";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function getIcon(name: string) { const Icon = (Icons as any)[name]; return Icon || Icons.Code; }
+import { getIcon } from "@/lib/constants";
 
 export function ToolPageHeader({ name, description, icon, slug, category, copyText }: { name: string; description: string; icon: string; slug: string; category: string; copyText?: string }) {
   const Icon = getIcon(icon);

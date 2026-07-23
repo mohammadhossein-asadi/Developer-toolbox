@@ -1,7 +1,6 @@
-"use client";
-import { useParams } from "react-router-dom";
+﻿import { useParams } from "react-router-dom";
 import { getToolBySlug } from "@/lib/constants";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const toolModules: Record<string, React.LazyExoticComponent<React.ComponentType>> = {
@@ -32,7 +31,6 @@ const toolModules: Record<string, React.LazyExoticComponent<React.ComponentType>
   "curl-converter": lazy(() => import("./tools/curl-converter/page")),
   "graphql-visualizer": lazy(() => import("./tools/graphql-visualizer/page")),
   // Existing
-  "jwt-decoder": lazy(() => import("./tools/jwt-decoder/page")),
   "uuid-generator": lazy(() => import("./tools/uuid-generator/page")),
   "qr-generator": lazy(() => import("./tools/qr-generator/page")),
   "color-picker": lazy(() => import("./tools/color-picker/page")),
@@ -68,6 +66,13 @@ export default function ToolPage() {
   const { slug } = useParams<{ slug: string }>();
   const tool = getToolBySlug(slug || "");
   const Component = toolModules[slug || ""];
+
+  useEffect(() => {
+    if (tool) {
+      document.title = `${tool.name} - Developer Toolbox`;
+    }
+    return () => { document.title = "Developer Toolbox - Premium Developer Utilities"; };
+  }, [tool]);
 
   if (!tool || !Component) {
     return (

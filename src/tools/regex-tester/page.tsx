@@ -1,5 +1,4 @@
-"use client";
-import { useState, useMemo } from "react";
+﻿import { useState, useMemo } from "react";
 import { ToolPageHeader } from "@/components/shared/tool-page-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
