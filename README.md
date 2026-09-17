@@ -7,7 +7,11 @@
 A comprehensive suite of developer tools that run entirely in your browser. JSON formatter, JWT decoder, regex tester, QR generator, password generator, RSA keypair creator, and 33 more — all offline-first with zero data leaving your machine.
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-developer--toolbox.dev-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=863bff)](https://developer-toolbox.dev)
-[![License: MIT](https://img.shields.io/badge/License-MIT-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=22c55e)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=22c55e)](LICENSE)
+[![React 19](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite_5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS_4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
 </div>
 
@@ -162,15 +166,17 @@ npm run preview
 
 ---
 
-## Author
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
 
 **Mohammadhossein Asadi** — Frontend & Full-Stack Engineer
 
 [![GitHub](https://img.shields.io/badge/GitHub-mohammadhossein--asadi-0a0a0a?style=flat-square&logo=github)](https://github.com/mohammadhossein-asadi)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-mohammadhossein--asadi-0a66c2?style=flat-square&logo=linkedin)](https://linkedin.com/in/mohammadhossein-asadi)
 
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+</div>
