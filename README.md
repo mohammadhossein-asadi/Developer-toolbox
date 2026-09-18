@@ -6,7 +6,7 @@
 
 A comprehensive suite of developer tools that run entirely in your browser. JSON formatter, JWT decoder, regex tester, QR generator, password generator, RSA keypair creator, and 33 more — all offline-first with zero data leaving your machine.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-developer--toolbox.dev-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=863bff)](https://developer-toolbox.dev)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-developer--toolbox-1.vercel.app-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=863bff)](https://developer-toolbox-1.vercel.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-0a0a0a?style=for-the-badge&labelColor=0a0a0a&color=22c55e)](LICENSE)
 [![React 19](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite_5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
